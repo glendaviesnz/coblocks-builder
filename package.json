@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clone": "git clone https://github.com/godaddy/coblocks.git",
+    "clone": "rm -fR coblocks && git clone https://github.com/godaddy/coblocks.git",
     "copy": "cp blocks.js ./coblocks/src",
     "remove-src": "rm -fR ./coblocks/build/coblocks/src",
-    "coblocks": "npm run copy && cd coblocks && npm install && grunt build && cd ../ && npm run remove-src"
+    "build": "npm run clone && npm run copy && cd coblocks && npm install && grunt build && cd ../ && npm run remove-src"
   },
   "repository": {
     "type": "git",
