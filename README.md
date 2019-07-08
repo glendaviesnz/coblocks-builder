@@ -23,3 +23,4 @@ After build has completed the `coblocks/build/coblocks` folder can be added to `
 
 * Add ability to clone a specific release/tag of CoBlocks repo
 * Add options for removing unused vendor js files
+* Add option to remove unused php files from ./includes
