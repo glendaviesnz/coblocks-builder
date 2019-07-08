@@ -12,7 +12,7 @@ To use:
 npm run build
 ```
 
-After build has completed the `coblocks/build/colblocks` folder can be added to `wp-content/plugins` folder.
+After build has completed the `coblocks/build/coblocks` folder can be added to `wp-content/plugins` folder.
 
 ## Things to note
 
