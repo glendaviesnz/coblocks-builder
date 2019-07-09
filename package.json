@@ -1,23 +1,27 @@
 {
-  "name": "coblocks-builder",
-  "version": "1.0.0",
-  "description": "Testing script for building coblocks release with selected blocks only",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "clone": "rm -fR coblocks && git clone https://github.com/godaddy/coblocks.git",
-    "copy": "cp blocks.js ./coblocks/src",
-    "remove-src": "rm -fR ./coblocks/build/coblocks/src",
-    "build": "npm run clone && npm run copy && cd coblocks && npm install && grunt build && cd ../ && npm run remove-src"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/glendaviesnz/coblocks-builder.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/glendaviesnz/coblocks-builder/issues"
-  },
-  "homepage": "https://github.com/glendaviesnz/coblocks-builder#readme"
+	"name": "@automattic/coblocks-plugin",
+	"version": "1.11.1",
+	"description": "Plugin to provide a select list of blocks from CoBlocks to WP.com users",
+	"main": "build.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"clone": "rimraf coblocks && git clone --branch 1.11.1 https://github.com/godaddy/coblocks.git",
+		"copy": "cp blocks.js ./coblocks/src",
+		"remove-src": "rimraf ./coblocks/build/coblocks/src",
+		"build": "node build.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/Automattic/wp-calypso.git"
+	},
+	"author": "Automattic, Inc.",
+	"license": "GPL-2.0-or-later",
+	"bugs": {
+		"url": "https://github.com/Automattic/wp-calypso/issues"
+	},
+	"homepage": "https://github.com/Automattic/wp-calypso#readme",
+	"devDependencies": {
+		"mv": "^2.1.1",
+		"rimraf": "^2.6.3"
+	}
 }

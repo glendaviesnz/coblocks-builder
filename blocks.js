@@ -41,7 +41,6 @@ import './components/block-gallery';
 // Register Blocks
 import * as clickToTweet from './blocks/click-to-tweet';
 import * as dynamicSeparator from './blocks/dynamic-separator';
-import * as gist from './blocks/gist';
 import * as highlight from './blocks/highlight';
 import * as foodAndDrinks from './blocks/food-and-drinks';
 import * as foodItem from './blocks/food-and-drinks/food-item';
@@ -60,7 +59,7 @@ import * as stacked from './blocks/gallery-stacked';
 import * as masonry from './blocks/gallery-masonry';
 import * as carousel from './blocks/gallery-carousel';
 
-export function registerBlocks () {
+export function registerBlocks() {
 	[
 		buttons,
 		carousel,
@@ -70,7 +69,6 @@ export function registerBlocks () {
 		features,
 		foodAndDrinks,
 		foodItem,
-		gist,
 		hero,
 		highlight,
 		icon,
@@ -82,15 +80,18 @@ export function registerBlocks () {
 		row,
 		shapeDivider,
 		stacked,
-	].forEach( ( block ) => {
-
+	].forEach( block => {
 		if ( ! block ) {
 			return;
 		}
 
 		const { name, icon, settings } = block;
 
-		registerBlockType( `coblocks/${ name }`, { category: category.slug, icon: { src: icon, foreground: iconColor, }, ...settings } );
+		registerBlockType( `coblocks/${ name }`, {
+			category: category.slug,
+			icon: { src: icon, foreground: iconColor },
+			...settings,
+		} );
 	} );
-};
+}
 registerBlocks();
