@@ -47,7 +47,6 @@ import * as foodItem from './blocks/food-and-drinks/food-item';
 import * as pricingTable from './blocks/pricing-table';
 import * as pricingTableItem from './blocks/pricing-table/pricing-table-item';
 import * as row from './blocks/row';
-import * as map from './blocks/map';
 import * as mediaCard from './blocks/media-card';
 import * as shapeDivider from './blocks/shape-divider';
 import * as icon from './blocks/icon';
@@ -72,7 +71,6 @@ export function registerBlocks() {
 		hero,
 		highlight,
 		icon,
-		map,
 		masonry,
 		mediaCard,
 		pricingTable,
@@ -80,18 +78,18 @@ export function registerBlocks() {
 		row,
 		shapeDivider,
 		stacked,
-	].forEach( block => {
-		if ( ! block ) {
+	].forEach(block => {
+		if (!block) {
 			return;
 		}
 
 		const { name, icon, settings } = block;
 
-		registerBlockType( `coblocks/${ name }`, {
+		registerBlockType(`coblocks/${name}`, {
 			category: category.slug,
 			icon: { src: icon, foreground: iconColor },
 			...settings,
-		} );
-	} );
+		});
+	});
 }
 registerBlocks();
