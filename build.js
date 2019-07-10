@@ -62,6 +62,7 @@ function removedUnusedBlocks(usedBlocks) {
 				removeDirectory(`${path}/${dir}`);
 			}
 		});
+	removeDirectory('./coblocks/src/sidebars/block-manager');
 }
 
 function removeDirectory(directory) {

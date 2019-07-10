@@ -31,10 +31,6 @@ import './extensions/button-controls';
 // Formats
 import './formats/';
 
-// Sidebars
-import './sidebars/block-manager';
-import './sidebars/block-manager/deprecated';
-
 // Block Gallery
 import './components/block-gallery';
 
