@@ -25,6 +25,32 @@ const usedBlocks = [
 	'highlight',
 ];
 
+const filesToRemove = [
+	'includes/class-coblocks-accordion-ie-support.php',
+	'includes/class-coblocks-form.php',
+	'includes/class-coblocks-google-map-block.php',
+	'dist/js/coblocks-accordion-polyfill.min.js',
+	'dist/js/coblocks-google-maps.min.js',
+	'dist/js/coblocks-google-recaptcha.min.js',
+];
+
+const directoriesToRemove = ['includes/admin', 'src', 'dist/images/admin'];
+
+build();
+
+async function build() {
+	await removeDirectory('./coblocks');
+	await removeDirectory('./build');
+	cloneRelease(version);
+	removedUnusedBlocks(usedBlocks);
+	copy('./blocks.js', './coblocks/src/blocks.js');
+	copy('./class-coblocks.php', './coblocks/class-coblocks.php');
+	runCoBlocksBuild();
+	await moveDirectory('./coblocks/build/coblocks', `./build/coblocks-${version}`);
+	await removeDirectory('./coblocks');
+	cleanBuild();
+}
+
 function removedUnusedBlocks(usedBlocks) {
 	console.log(`Removing unused block src`);
 	const path = './coblocks/src/blocks';
@@ -94,32 +120,13 @@ function runCoBlocksBuild() {
 	}
 }
 
-async function cleanBuild() {
-	await removeDirectory('./build/coblocks/src');
-	await removeDirectory('./build/coblocks/includes/admin');
-	removeFile('./build/coblocks/includes/class-coblocks-accordion-ie-support.php');
-	removeFile('./build/coblocks/includes/class-coblocks-form.php');
-	removeFile('./build/coblocks/includes/class-coblocks-google-map-block.php');
-	removeFile('./build/coblocks/dist/js/coblocks-accordion-polyfill.min.js');
-	removeFile('./build/coblocks/dist/js/coblocks-google-maps.min.js');
-	removeFile('./build/coblocks/dist/js/coblocks-google-recaptcha.min.js');
+function cleanBuild() {
+	directoriesToRemove.forEach(directory =>
+		removeDirectory(`./build/coblocks-${version}/${directory}`)
+	);
+	filesToRemove.forEach(file => removeFile(`./build/coblocks-${version}/${file}`));
 	copy(
 		'./class-coblocks-register-blocks.php',
-		'./build/coblocks/includes/class-coblocks-register-blocks.php'
+		`./build/coblocks-${version}/includes/class-coblocks-register-blocks.php`
 	);
 }
-
-async function build() {
-	await removeDirectory('./coblocks');
-	await removeDirectory('./build');
-	cloneRelease(version);
-	removedUnusedBlocks(usedBlocks);
-	copy('./blocks.js', './coblocks/src/blocks.js');
-	copy('./class-coblocks.php', './coblocks/class-coblocks.php');
-	runCoBlocksBuild();
-	await moveDirectory('./coblocks/build/coblocks', './build/coblocks');
-	await removeDirectory('./coblocks');
-	cleanBuild();
-}
-
-build();
