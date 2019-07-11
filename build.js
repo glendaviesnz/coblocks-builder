@@ -46,7 +46,7 @@ async function build() {
 	copy('./blocks.js', './coblocks/src/blocks.js');
 	copy('./class-coblocks.php', './coblocks/class-coblocks.php');
 	runCoBlocksBuild();
-	await moveDirectory('./coblocks/build/coblocks', `./build/coblocks-${version}`);
+	await moveDirectory('./coblocks/build/coblocks', `./build/${version}`);
 	await removeDirectory('./coblocks');
 	cleanBuild();
 }
@@ -122,12 +122,10 @@ function runCoBlocksBuild() {
 }
 
 function cleanBuild() {
-	directoriesToRemove.forEach(directory =>
-		removeDirectory(`./build/coblocks-${version}/${directory}`)
-	);
-	filesToRemove.forEach(file => removeFile(`./build/coblocks-${version}/${file}`));
+	directoriesToRemove.forEach(directory => removeDirectory(`./build/${version}/${directory}`));
+	filesToRemove.forEach(file => removeFile(`./build/${version}/${file}`));
 	copy(
 		'./class-coblocks-register-blocks.php',
-		`./build/coblocks-${version}/includes/class-coblocks-register-blocks.php`
+		`./build/${version}/includes/class-coblocks-register-blocks.php`
 	);
 }

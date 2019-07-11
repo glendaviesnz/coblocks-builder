@@ -43,6 +43,7 @@ import * as foodItem from './blocks/food-and-drinks/food-item';
 import * as pricingTable from './blocks/pricing-table';
 import * as pricingTableItem from './blocks/pricing-table/pricing-table-item';
 import * as row from './blocks/row';
+import * as column from './blocks/row/column';
 import * as mediaCard from './blocks/media-card';
 import * as shapeDivider from './blocks/shape-divider';
 import * as icon from './blocks/icon';
@@ -59,6 +60,7 @@ export function registerBlocks() {
 		buttons,
 		carousel,
 		clickToTweet,
+		column,
 		dynamicSeparator,
 		feature,
 		features,
