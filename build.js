@@ -63,6 +63,7 @@ function removedUnusedBlocks(usedBlocks) {
 			}
 		});
 	removeDirectory('./coblocks/src/sidebars/block-manager');
+	removeDirectory('./coblocks/src/extensions/typography');
 }
 
 function removeDirectory(directory) {

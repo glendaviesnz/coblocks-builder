@@ -21,7 +21,6 @@ import './styles/style.scss';
 
 // Extensions
 import './extensions/colors/inspector';
-import './extensions/typography';
 import './extensions/attributes';
 import './extensions/advanced-controls';
 import './extensions/list-styles';
