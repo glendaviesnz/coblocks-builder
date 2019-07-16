@@ -8,21 +8,13 @@ const mv = util.promisify(require('mv'));
 const { readdirSync } = require('fs');
 
 const usedBlocks = [
-	'row',
 	'hero',
-	'media-card',
 	'gallery-masonry',
-	'shape-divider',
 	'dynamic-separator',
 	'gallery-stacked',
-	'gallery-carousel',
 	'buttons',
 	'pricing-table',
-	'food-and-drinks',
-	'icon',
-	'features',
 	'click-to-tweet',
-	'highlight',
 ];
 
 const filesToRemove = [
@@ -32,9 +24,16 @@ const filesToRemove = [
 	'dist/js/coblocks-accordion-polyfill.min.js',
 	'dist/js/coblocks-google-maps.min.js',
 	'dist/js/coblocks-google-recaptcha.min.js',
+	'dist/js/vendors/flickity.min.js',
 ];
 
-const directoriesToRemove = ['includes/admin', 'src', 'dist/images/admin'];
+const directoriesToRemove = [
+	'includes/admin',
+	'src',
+	'dist/images/admin',
+	'dist/images/map',
+	'dist/images/markers',
+];
 
 build();
 
