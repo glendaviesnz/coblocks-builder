@@ -20,12 +20,12 @@ import './styles/editor.scss';
 import './styles/style.scss';
 
 // Extensions
-// import './extensions/colors/inspector';
+import './extensions/colors/inspector';
 import './extensions/attributes';
-// import './extensions/advanced-controls';
-// import './extensions/list-styles';
-// import './extensions/button-styles';
-// import './extensions/button-controls';
+import './extensions/advanced-controls';
+import './extensions/list-styles';
+import './extensions/button-styles';
+import './extensions/button-controls';
 
 // Formats
 import './formats/';
