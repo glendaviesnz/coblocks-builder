@@ -82,22 +82,6 @@ class CoBlocks_Register_Blocks {
 			)
 		);
 		register_block_type(
-			$slug . '/highlight',
-			array(
-				'editor_script' => $slug . '-editor',
-				'editor_style'  => $slug . '-editor',
-				'style'         => $slug . '-frontend',
-			)
-		);
-		register_block_type(
-			$slug . '/gallery-carousel',
-			array(
-				'editor_script' => $slug . '-editor',
-				'editor_style'  => $slug . '-editor',
-				'style'         => $slug . '-frontend',
-			)
-		);
-		register_block_type(
 			$slug . '/gallery-masonry',
 			array(
 				'editor_script' => $slug . '-editor',
