@@ -20,12 +20,12 @@ import './styles/editor.scss';
 import './styles/style.scss';
 
 // Extensions
-import './extensions/colors/inspector';
+// import './extensions/colors/inspector';
 import './extensions/attributes';
-import './extensions/advanced-controls';
-import './extensions/list-styles';
-import './extensions/button-styles';
-import './extensions/button-controls';
+// import './extensions/advanced-controls';
+// import './extensions/list-styles';
+// import './extensions/button-styles';
+// import './extensions/button-controls';
 
 // Formats
 import './formats/';
@@ -34,11 +34,11 @@ import './formats/';
 import './components/block-gallery';
 
 // Register Blocks
+import * as buttons from './blocks/buttons';
 import * as clickToTweet from './blocks/click-to-tweet';
 import * as dynamicSeparator from './blocks/dynamic-separator';
 import * as pricingTable from './blocks/pricing-table';
 import * as pricingTableItem from './blocks/pricing-table/pricing-table-item';
-import * as buttons from './blocks/buttons';
 import * as hero from './blocks/hero';
 import * as stacked from './blocks/gallery-stacked';
 import * as masonry from './blocks/gallery-masonry';

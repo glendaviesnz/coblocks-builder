@@ -12,7 +12,6 @@ const usedBlocks = [
 	'gallery-masonry',
 	'dynamic-separator',
 	'gallery-stacked',
-	'buttons',
 	'pricing-table',
 	'click-to-tweet',
 ];
@@ -21,10 +20,22 @@ const filesToRemove = [
 	'includes/class-coblocks-accordion-ie-support.php',
 	'includes/class-coblocks-form.php',
 	'includes/class-coblocks-google-map-block.php',
+	'includes/class-coblocks-block-settings.php',
+	'includes/get-dynamic-blocks.php',
 	'dist/js/coblocks-accordion-polyfill.min.js',
 	'dist/js/coblocks-google-maps.min.js',
 	'dist/js/coblocks-google-recaptcha.min.js',
 	'dist/js/vendors/flickity.min.js',
+	'dist/js/vendors/lity.min.js',
+	'dist/css/coblocks-getting-started.css',
+	'dist/css/coblocks-getting-started.min.css',
+	'dist/images/social/email.svg',
+	'dist/images/social/facebook.svg',
+	'dist/images/social/google.svg',
+	'dist/images/social/linkedin.svg',
+	'dist/images/social/pinterest.svg',
+	'dist/images/social/reddit.svg',
+	'dist/images/social/tumblr.svg',
 ];
 
 const directoriesToRemove = [
